@@ -3,9 +3,10 @@
 ### TODOs for anyone before deploying
 
 1. Check out eigen Artsy master.
-1. Run `make appstore`. This prompts you for a release version number.
-1. Update CHANGELOG with the release number.
-1. Add and commit the changed files, typically with `-m "Preparing for the next release, version X.Y.Z."`.
+2. Run `make appstore`. This prompts you for a release version number.
+3. Update CHANGELOG with the release number.
+4. Add and commit the changed files, typically with `-m "Preparing for the next release, version X.Y.Z."`.
+5. Make a git tag for the version with `git tag x.y.z`. Push the tags to `artsy/eigen` with `git push --tags`.
 
 ### Provisioning Profiles
 
@@ -31,7 +32,7 @@ See [certs.md](certs.md) for more info on certificates.
 4. Fill in the copy for each language (just copy/paste the English copy), change screenshots as necessary, etc. (Or you can do this step at a later point in time.)
 
 ### Creating an Archive in Xcode and upload it
-1. In Xcode, change the target device to _iOS Device_.
+1. In Xcode, change the target device to _iOS Device_. ![](./screenshots/archive_target.png)
 2. In Xcode, hold alt (`⌥`) and go to the menu, hit _Product_ and then _Archive..._.
 3. Check that the Build Configuration is set to _Store_.
 4. Hit _Archive_.
@@ -41,8 +42,10 @@ See [certs.md](certs.md) for more info on certificates.
 
 ### Connect Archive to iTunes Connect
 1. When your archived build upload is done, return to your newly created version in iTunes connect. In the section called _Build_, you should be able to add your newly uploaded Archived build. You can also still make any other changes to copy or images in iTunes Connect at this time.
-2. When everything is finalized, hit _Submit Build_. Answer the questions that follow and submit.
+2. When everything is finalized, hit _Submit Build_. Answer the questions that follow and submit. (See pic.)
 3. Your app has now been submitted to the App Store! You can still go back and make copy changes in iTunes Connect if you need to.
+
+![](./screenshots/itunes_connect_questions.png)
 
 ### Link with Hockyapp
 This step can be done at any time after creating your archived build. The archived build you submit to the App Store must be the same archived build you upload to HockeyApp.
@@ -50,11 +53,12 @@ This step can be done at any time after creating your archived build. The archiv
 1. Install HockeyApp from http://hockeyapp.net/apps and run it.
 2. HockeyApp will automatically see the archive you created.
 3. Select the correct archive and click _Open_.
-4. On the next screen, make sure that all options are correct.
+4. On the next screen, make sure that all options are correct. (See pic.)
 5. Hit _Upload_ to send your archive to HockeyApp.
 
+![](./screenshots/hockeyapp_options.png)
+
 ### Prepare for the Next Release
-1. Make a git tag for the version with `git tag x.y.z`. Push the tags to `artsy/eigen` with `git push --tags`.
-2. Run `make next`. This runs `pod install` and prompts for the next version number.
-3. Add a new section to CHANGELOG called _Next_.
-1. Add and commit the changed files, typically with `-m "Preparing for development, version X.Y.Z."`.
+1. Run `make next`. This runs `pod install` and prompts for the next version number.
+2. Add a new section to CHANGELOG called _Next_.
+3. Add and commit the changed files, typically with `-m "Preparing for development, version X.Y.Z."`.
