@@ -46,6 +46,7 @@ See [certs.md](certs.md) for more info on certificates.
 
 ### Link with Hockyapp
 This step can be done at any time after creating your archived build. The archived build you submit to the App Store must be the same archived build you upload to HockeyApp.
+
 1. Install HockeyApp from http://hockeyapp.net/apps and run it.
 2. HockeyApp will automatically see the archive you created.
 3. Select the correct archive and click _Open_.
